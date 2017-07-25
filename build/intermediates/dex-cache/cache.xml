@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Liuzhaoming\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_7ed7abdebf98e0044d6fb93e58d64655ff0bd0bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\libs\javacpp.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="08f8b1e3fdcc93a1e9076d6279864d6a46982a85">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\javacpp_484cce80658e29931f99547d0b35834514248538.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Liuzhaoming\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_7ed7abdebf98e0044d6fb93e58d64655ff0bd0bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\libs\javacv.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1824ed7a180ee32aa57f5632a489c10aad8f1804">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\javacv_7e9e8cc3a3dc27752ee51c51110014d1ae550524.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\libs\javacpp.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="08f8b1e3fdcc93a1e9076d6279864d6a46982a85">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\javacpp_484cce80658e29931f99547d0b35834514248538.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\libs\javacv.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1824ed7a180ee32aa57f5632a489c10aad8f1804">
+        <dex dex="C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\build\intermediates\pre-dexed\debug\javacv_7e9e8cc3a3dc27752ee51c51110014d1ae550524.jar" />
+    </item>
+
+</items>

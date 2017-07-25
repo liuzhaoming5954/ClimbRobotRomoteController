@@ -1,0 +1,106 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:2:1-47:12
+	package
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:3:5-25
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:3:50-75
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:3:26-49
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:5:5-84
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:6:5-96
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:7:5-96
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:8:5-93
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:8:22-73
+uses-permission#android.permission.VIBRATE
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:10:5-83
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:10:22-63
+uses-sdk
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:12:5-42
+	android:targetSdkVersion
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:12:15-40
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:14:5-45:19
+	android:label
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:16:9-41
+	android:icon
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:15:9-38
+activity#com.fei435.Splash
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:17:9-25:20
+	android:screenOrientation
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:20:13-50
+	android:label
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:19:13-45
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:18:13-45
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:21:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:23:27-74
+activity#com.fei435.WifiCarSettings
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:26:9-30:20
+	android:screenOrientation
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:29:13-50
+	android:label
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:28:13-69
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:27:13-54
+activity#com.fei435.Main
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:32:9-36:20
+	android:screenOrientation
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:35:13-50
+	android:label
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:34:13-45
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:33:13-43
+receiver#com.fei435.HanryReceiver
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:38:9-44:14
+	android:exported
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:38:59-83
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:38:19-58
+intent-filter#fei435.recording_start+fei435.recording_stop+fei435.take_picture_done
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:39:7-43:23
+action#fei435.take_picture_done
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:40:11-61
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:40:19-58
+action#fei435.recording_start
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:41:11-59
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:41:19-56
+action#fei435.recording_stop
+ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:42:11-58
+	android:name
+		ADDED from C:\MyProgram\Android\android-camera-socket-stream-master\WiFiCarClient-master\app\src\main\AndroidManifest.xml:42:19-55
