@@ -8,12 +8,12 @@
         "source": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\src\\main\\res\\drawable\\sym_light_off.png"
     },
     {
-        "merged": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sym_left_1.png",
-        "source": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\src\\main\\res\\drawable\\sym_left_1.png"
-    },
-    {
         "merged": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sym_indicator1.png",
         "source": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\src\\main\\res\\drawable\\sym_indicator1.png"
+    },
+    {
+        "merged": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sym_left_1.png",
+        "source": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\src\\main\\res\\drawable\\sym_left_1.png"
     },
     {
         "merged": "C:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sym_right.png",

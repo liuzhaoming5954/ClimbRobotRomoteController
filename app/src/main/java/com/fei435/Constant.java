@@ -104,9 +104,9 @@ public class Constant {
 	public static byte[] COMM_GEAR_CONTROL_1 =   {(byte) 0xFF, (byte)0x01, (byte)0x01, (byte)0x00, (byte) 0xFE};
 	public static byte[] COMM_GEAR_CONTROL_2 =   {(byte) 0xFF, (byte)0x01, (byte)0x02, (byte)0x00, (byte) 0xFE};
 
-	//这个的值是一打开app就要发送的初始速度分别是506  16
-	public static byte[] COMM_SPEED_VALUE_1 =   {(byte) 0xFF, (byte)0x05, (byte)0x01, (byte)0x32, (byte) 0xFE};//轮子转速
-	public static byte[] COMM_SPEED_VALUE_2 =   {(byte) 0xFF, (byte)0x05, (byte)0x02, (byte)0x32, (byte) 0xFE};//吸气电机转速
+	//initial velocity 506  16
+	public static byte[] COMM_SPEED_VALUE_1 =   {(byte) 0xFF, (byte)0x05, (byte)0x01, (byte)0x32, (byte) 0xFE};//speed of motion motor
+	public static byte[] COMM_SPEED_VALUE_2 =   {(byte) 0xFF, (byte)0x05, (byte)0x02, (byte)0x32, (byte) 0xFE};//speed of suction motor
 
 	public static byte[] COMM_SELF_CHECK =     {(byte) 0xFF, (byte)0xEE, (byte)0xEE, 0x00, (byte) 0xFE};
 	public static byte[] COMM_SELF_CHECK_ALL = {(byte) 0xFF, (byte)0xEE, (byte)0xE0, 0x00, (byte) 0xFE};

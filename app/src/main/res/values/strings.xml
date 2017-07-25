@@ -3,5 +3,5 @@
     <string name="hello">fei435</string>
     <string name="app_name">InnovBot .</string>
     <string name="app_version">Version 1.0</string>
-    <string name="title_activity_wifi_car_settings">小车设置</string>
+    <string name="title_activity_wifi_car_settings">Robot Setting</string>
 </resources>
