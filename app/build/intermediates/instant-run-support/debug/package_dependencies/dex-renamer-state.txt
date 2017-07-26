@@ -1,0 +1,10 @@
+#Wed Jul 26 11:38:40 EDT 2017
+renamed.2=classes2.dex
+renamed.1=classes.dex
+renamed.0=classes3.dex
+base.2=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\javacpp_484cce80658e29931f99547d0b35834514248538
+base.1=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_7ed7abdebf98e0044d6fb93e58d64655ff0bd0bf
+base.0=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\javacv_7e9e8cc3a3dc27752ee51c51110014d1ae550524
+file.2=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\javacpp_484cce80658e29931f99547d0b35834514248538\\classes.dex
+file.1=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_7ed7abdebf98e0044d6fb93e58d64655ff0bd0bf\\classes.dex
+file.0=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\javacv_7e9e8cc3a3dc27752ee51c51110014d1ae550524\\classes.dex

@@ -114,6 +114,9 @@ public class Constant {
 	public static byte[] COMM_HEART_BREAK = {(byte) 0xFF, (byte)0xEE, (byte)0xE1, 0x00, (byte) 0xFE};
 
 	public static byte[] COMM_SERVO =   {(byte) 0xFF, (byte)0x04, (byte)0x00, (byte)0x01, (byte) 0xFE};//
+
+	public static byte[] COMM_SUCTION_ON = {(byte) 0xFF, (byte)0x01, (byte)0x01, (byte)0x00, (byte) 0xFE};
+	public static byte[] COMM_SUCTION_OFF = {(byte) 0xFF, (byte)0x01, (byte)0x00, (byte)0x00, (byte) 0xFE};
 	/////////////////////////////////////////////////////////
 
 	public static class CommandArray {

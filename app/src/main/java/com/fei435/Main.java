@@ -35,6 +35,8 @@ import android.widget.ToggleButton;
 import com.fei435.Constant.CommandArray;
 
 import static com.fei435.Constant.COMM_SERVO;
+import static com.fei435.Constant.COMM_SUCTION_OFF;
+import static com.fei435.Constant.COMM_SUCTION_ON;
 
 public class Main extends Activity implements
         com.fei435.SeekBar.OnSeekBarChangeListener,android.widget.SeekBar.OnSeekBarChangeListener  //分别是横向和纵向的SeekBar
@@ -54,6 +56,8 @@ public class Main extends Activity implements
     private final int WARNING_ICON_OFF_DURATION_MSEC = 600;
     private final int WARNING_ICON_ON_DURATION_MSEC = 800;
 
+    public static int flagsuction = 0;
+
     private ImageButton ForWard;  //按钮的类，代表一个按钮
     private ImageButton BackWard;
     private ImageButton TurnLeft;
@@ -62,6 +66,7 @@ public class Main extends Activity implements
 
     //插入我的按钮
     private ImageButton Servo;
+    private ImageButton Suction;
 
     private ImageView mAnimIndicator;
     private boolean bAnimationEnabled = true;
@@ -83,6 +88,9 @@ public class Main extends Activity implements
     //插入我的按钮
     private Drawable Servoon;
     private Drawable Servooff;
+    private Drawable Suctionon;
+    private Drawable Suctionoff;
+
 
     private com.fei435.SeekBar mSeekBar1;
     private com.fei435.SeekBar mSeekBar2;            //自己实现的纵向seekbar,这是进度条
@@ -171,15 +179,19 @@ public class Main extends Activity implements
 
                     break;
                 case Constant.MSG_ID_ERR_CONN:
-                    mLogText.setText("连接控制地址失败!");
-                    Log.i("mLogText","连接控制地址失败!");
+                    //mLogText.setText("连接控制地址失败!");
+                    //Log.i("mLogText","连接控制地址失败!");
+                    mLogText.setText("Establish connection failed!");
+                    Log.i("mLogText","Establish connection failed!");
                     break;
                 case Constant.MSG_ID_CLEAR_QUIT_FLAG:
                     mQuitFlag = false;
                     break;
                 case Constant.MSG_ID_START_CHECK:
-                    mLogText.setText("开始进行自检，请稍等。。。。!!");
-                    Log.i("mLogText","开始进行自检，请稍等。。。。!!");
+                    //mLogText.setText("开始进行自检，请稍等。。。。!!");
+                    //Log.i("mLogText","开始进行自检，请稍等。。。。!!");
+                    mLogText.setText("Checking Please wait!!");
+                    Log.i("mLogText","Checking Please wait!!");
                     //TODO:bReaddyToSendCmd应该放在哪里？
                     //bReaddyToSendCmd = true;
                     mWiFiCarControler.selfcheck();
@@ -191,8 +203,10 @@ public class Main extends Activity implements
                     } else if (mHeartBreakCounter > 0) {
                         bHeartBreakFlag = true;
                     } else {
-                        mLogText.setText("心跳包出现异常，已经忽略...");
-                        Log.i("heart","心跳包出现异常，已经忽略...");
+                        //mLogText.setText("心跳包出现异常，已经忽略...");
+                        //Log.i("heart","心跳包出现异常，已经忽略...");
+                        mLogText.setText("Heartbeat error");
+                        Log.i("heart","Heartbeat error");
                     }
                     Log.i("heart", "handle MSG_ID_HEART_BREAK_RECEIVE :flag=" + bHeartBreakFlag);
 
@@ -249,6 +263,7 @@ public class Main extends Activity implements
 
         //我的按钮
         Servo = (ImageButton)findViewById(R.id.btnServo) ;
+        Suction = (ImageButton)findViewById(R.id.btnStop) ;
 
         buttonCus1= (ImageButton)findViewById(R.id.ButtonCus1);
         buttonCus1.setOnClickListener(buttonCus1ClickListener);
@@ -282,6 +297,9 @@ public class Main extends Activity implements
         Servoon = getResources().getDrawable(R.drawable.sym_stop_1);
         Servooff = getResources().getDrawable(R.drawable.sym_stop);
 
+        Suctionon = getResources().getDrawable(R.drawable.sym_stop_1);
+        Suctionoff = getResources().getDrawable(R.drawable.sym_stop);
+
         //我的按钮
 
         //显示视频及按钮的view,即MjpegView，backgroundView是MjpegView的实例
@@ -293,6 +311,7 @@ public class Main extends Activity implements
             mLogText.setBackgroundColor(Color.argb(0, 0, 0, 0));//0~255透明度值  255不透明
             mLogText.setTextColor(Color.argb(255, 255, 255, 255));
             mLogText.setTextSize(10);
+            mLogText.setText("");
         }
 
 
@@ -425,7 +444,7 @@ public class Main extends Activity implements
                     case MotionEvent.ACTION_DOWN:
                         mVibrator.vibrate(100);
                         Constant.COMM_SERVO[2] = (byte)(Constant.COMM_SERVO[2] + Constant.COMM_SERVO[3]);
-                        mWiFiCarControler.sendCommand(COMM_SERVO);   //发送前进命令
+                        mWiFiCarControler.sendCommand(COMM_SERVO);   //Send Sever Position
                         Servo.setImageDrawable(Servoon);
                         Servo.invalidateDrawable(Servoon);
                         break;
@@ -433,6 +452,36 @@ public class Main extends Activity implements
                         Servo.setImageDrawable(Servooff);
                         Servo.invalidateDrawable(Servooff);
                         break;
+                }
+                return false;
+            }
+        });
+
+        // Suction Start
+        Suction.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        if(flagsuction == 0)
+                        {
+                            flagsuction = 1;
+                            mVibrator.vibrate(100);
+                            mWiFiCarControler.sendCommand(COMM_SUCTION_ON);   //Send Sever Position
+                            Suction.setImageDrawable(Suctionon);
+                            Suction.invalidateDrawable(Suctionon);
+                            break;
+                        }
+                        else
+                        {
+                            flagsuction = 0;
+                            mVibrator.vibrate(100);
+                            mWiFiCarControler.sendCommand(COMM_SUCTION_OFF);   //Send Sever Position
+                            Suction.setImageDrawable(Suctionoff);
+                            Suction.invalidateDrawable(Suctionoff);
+                            break;
+                        }
                 }
                 return false;
             }
@@ -728,7 +777,8 @@ public class Main extends Activity implements
 
         switch (cmd2) {
             case (byte)0xE1:
-                Log.i("heart","收到小车心跳包 ！");
+                //Log.i("heart","收到小车心跳包 ！");
+                Log.i("heart","Received Heartbeat");
                 handleHeartBreak();
                 break;
 //        case (byte)0xE2:
@@ -816,7 +866,8 @@ public class Main extends Activity implements
                 //Constant.COMM_SPEED_VALUE_1[2] = (byte)(progress >> 8);
                 Constant.COMM_SPEED_VALUE_1[2] = 0x01;
                 Constant.COMM_SPEED_VALUE_1[3] = (byte)(progress);
-                Log.i("speed", "set speed(十进制):"+progress);
+                //Log.i("speed", "set speed(十进制):"+progress);
+                Log.i("speed", "set speed:"+progress);
                 msg.obj = Constant.COMM_SPEED_VALUE_1;
                 mHandler.sendMessage(msg);
             }
@@ -832,7 +883,8 @@ public class Main extends Activity implements
                 //Constant.COMM_SPEED_VALUE_2[2] = (byte)(progress >> 8);
                 Constant.COMM_SPEED_VALUE_2[2] = 0x02;
                 Constant.COMM_SPEED_VALUE_2[3] = (byte)(progress);
-                Log.i("speed", "set speed(十进制):"+progress);
+                //Log.i("speed", "set speed(十进制):"+progress);
+                Log.i("speed", "set speed:"+progress);
                 msg.obj = Constant.COMM_SPEED_VALUE_2;
                 mHandler.sendMessage(msg);
             }
