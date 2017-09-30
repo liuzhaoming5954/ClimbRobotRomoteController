@@ -34,6 +34,8 @@ import android.widget.ToggleButton;
 
 import com.fei435.Constant.CommandArray;
 
+import static com.fei435.Constant.COMM_CAMERA_OFF;
+import static com.fei435.Constant.COMM_CAMERA_ON;
 import static com.fei435.Constant.COMM_SERVO;
 import static com.fei435.Constant.COMM_SUCTION_OFF;
 import static com.fei435.Constant.COMM_SUCTION_ON;
@@ -57,12 +59,20 @@ public class Main extends Activity implements
     private final int WARNING_ICON_ON_DURATION_MSEC = 800;
 
     public static int flagsuction = 0;
+    public static int flagcamera = 0;
 
     private ImageButton ForWard;  //按钮的类，代表一个按钮
     private ImageButton BackWard;
     private ImageButton TurnLeft;
     private ImageButton TurnRight;
     private ImageButton TakePicture;
+
+    //插入摄像头控制按钮
+    private ImageButton CameraUp;  //按钮的类，代表一个按钮
+    private ImageButton CameraDown;
+    private ImageButton CameraLeft;
+    private ImageButton CameraRight;
+    private ImageButton CameraSwitch;
 
     //插入我的按钮
     private ImageButton Servo;
@@ -90,6 +100,17 @@ public class Main extends Activity implements
     private Drawable Servooff;
     private Drawable Suctionon;
     private Drawable Suctionoff;
+
+    private Drawable CameraUpon;
+    private Drawable CameraUpoff;
+    private Drawable CameraDownon;
+    private Drawable CameraDownoff;
+    private Drawable CameraLefton;
+    private Drawable CameraLeftoff;
+    private Drawable CameraRighton;
+    private Drawable CameraRightoff;
+    private Drawable CameraSwitchon;
+    private Drawable CameraSwitchoff;
 
 
     private com.fei435.SeekBar mSeekBar1;
@@ -261,9 +282,15 @@ public class Main extends Activity implements
         gravityDetectToggle = (ToggleButton)findViewById(R.id.gravityToggleButton);
         speedChangeCheckBox = (CheckBox)findViewById(R.id.speedChangeCheckbox);
 
+        CameraUp = (ImageButton)findViewById(R.id.btnCamUp);
+        CameraLeft = (ImageButton)findViewById(R.id.btnCamLeft);
+        CameraRight = (ImageButton)findViewById(R.id.btnCamRight);
+        CameraDown = (ImageButton)findViewById(R.id.btnCamDown);
+        CameraSwitch = (ImageButton)findViewById(R.id.btnCamSwitch);
+
         //我的按钮
-        Servo = (ImageButton)findViewById(R.id.btnServo) ;
-        Suction = (ImageButton)findViewById(R.id.btnStop) ;
+        Servo = (ImageButton)findViewById(R.id.btnServo);
+        Suction = (ImageButton)findViewById(R.id.btnStop);
 
         buttonCus1= (ImageButton)findViewById(R.id.ButtonCus1);
         buttonCus1.setOnClickListener(buttonCus1ClickListener);
@@ -301,6 +328,21 @@ public class Main extends Activity implements
         Suctionoff = getResources().getDrawable(R.drawable.sym_stop);
 
         //我的按钮
+        CameraUpon = getResources().getDrawable(R.drawable.sym_forward_1);
+        CameraUpoff = getResources().getDrawable(R.drawable.sym_forward);
+
+        CameraLefton = getResources().getDrawable(R.drawable.sym_left_1);
+        CameraLeftoff = getResources().getDrawable(R.drawable.sym_left);
+
+        CameraRighton = getResources().getDrawable(R.drawable.sym_right_1);
+        CameraRightoff = getResources().getDrawable(R.drawable.sym_right);
+
+        CameraDownon = getResources().getDrawable(R.drawable.sym_backward_1);
+        CameraDownoff = getResources().getDrawable(R.drawable.sym_backward);
+
+        CameraSwitchon = getResources().getDrawable(R.drawable.sym_stop_1);
+        CameraSwitchoff = getResources().getDrawable(R.drawable.sym_stop);
+
 
         //显示视频及按钮的view,即MjpegView，backgroundView是MjpegView的实例
         backgroundView = (MjpegView)findViewById(R.id.mySurfaceView1);
@@ -313,6 +355,10 @@ public class Main extends Activity implements
             mLogText.setTextSize(10);
             mLogText.setText("");
         }
+
+        //启动线程
+
+        //线程启动完成
 
 
 
@@ -480,6 +526,119 @@ public class Main extends Activity implements
                             mWiFiCarControler.sendCommand(COMM_SUCTION_OFF);   //Send Sever Position
                             Suction.setImageDrawable(Suctionoff);
                             Suction.invalidateDrawable(Suctionoff);
+                            break;
+                        }
+                }
+                return false;
+            }
+        });
+
+        CameraUp.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        mVibrator.vibrate(100);
+                        mWiFiCarControler.sendCommand(Constant.COMM_CAMERA_UP);   //发送相机向上命令
+                        CameraUp.setImageDrawable(CameraUpon);
+                        CameraUp.invalidateDrawable(CameraUpon);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //mWiFiCarControler.sendCommand(Constant.COMM_STOP);
+                        CameraUp.setImageDrawable(CameraUpoff);
+                        CameraUp.invalidateDrawable(CameraUpoff);
+                        break;
+                }
+                return false;
+            }
+        });
+
+        CameraDown.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        mVibrator.vibrate(100);
+                        mWiFiCarControler.sendCommand(Constant.COMM_CAMERA_DOWN);   //发送相机向下命令
+                        CameraDown.setImageDrawable(CameraDownon);
+                        CameraDown.invalidateDrawable(CameraDownon);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //mWiFiCarControler.sendCommand(Constant.COMM_STOP);
+                        CameraDown.setImageDrawable(CameraDownoff);
+                        CameraDown.invalidateDrawable(CameraDownoff);
+                        break;
+                }
+                return false;
+            }
+        });
+
+        CameraLeft.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        mVibrator.vibrate(100);
+                        mWiFiCarControler.sendCommand(Constant.COMM_CAMERA_LEFT);   //发送相机向下命令
+                        CameraLeft.setImageDrawable(CameraLefton);
+                        CameraLeft.invalidateDrawable(CameraLefton);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //mWiFiCarControler.sendCommand(Constant.COMM_STOP);
+                        CameraLeft.setImageDrawable(CameraLeftoff);
+                        CameraLeft.invalidateDrawable(CameraLeftoff);
+                        break;
+                }
+                return false;
+            }
+        });
+
+        CameraRight.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        mVibrator.vibrate(100);
+                        mWiFiCarControler.sendCommand(Constant.COMM_CAMERA_RIGHT);   //发送相机向下命令
+                        CameraRight.setImageDrawable(CameraRighton);
+                        CameraRight.invalidateDrawable(CameraRighton);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //mWiFiCarControler.sendCommand(Constant.COMM_STOP);
+                        CameraRight.setImageDrawable(CameraRightoff);
+                        CameraRight.invalidateDrawable(CameraRightoff);
+                        break;
+                }
+                return false;
+            }
+        });
+
+        CameraSwitch.setOnTouchListener( new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch(action)
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        if(flagcamera == 0)
+                        {
+                            flagcamera = 1;
+                            mVibrator.vibrate(100);
+                            mWiFiCarControler.sendCommand(COMM_CAMERA_ON);   //Send Sever Position
+                            CameraSwitch.setImageDrawable(CameraSwitchon);
+                            CameraSwitch.invalidateDrawable(CameraSwitchon);
+                            break;
+                        }
+                        else
+                        {
+                            flagcamera = 0;
+                            mVibrator.vibrate(100);
+                            mWiFiCarControler.sendCommand(COMM_CAMERA_OFF);   //Send Sever Position
+                            CameraSwitch.setImageDrawable(CameraSwitchoff);
+                            CameraSwitch.invalidateDrawable(CameraSwitchoff);
                             break;
                         }
                 }

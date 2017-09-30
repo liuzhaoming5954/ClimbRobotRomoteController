@@ -109,7 +109,7 @@ public class WiFiCarController{    //WiFiCar连接的封装类
         mHandler.sendMessage(msg);
     }
 
-    public class ControlThread extends Thread{    //接收数据包的线程
+    public class ControlThread extends Thread{    //接收数据包的线程  TODO:这个线程怎么启动？还是已经启动了？
 
         public void run()
         {
@@ -145,6 +145,7 @@ public class WiFiCarController{    //WiFiCar连接的封装类
                         e.printStackTrace();
                     }
 
+                    //删除注释测试
 //            		try
 //            		{
 //            		    //Log.i("socket thread","mThreadFlag:" + mThreadFlag+System.currentTimeMillis());
@@ -159,15 +160,15 @@ public class WiFiCarController{    //WiFiCar连接的封装类
 //            		            long ticketInterval = newTicket - lastTicket;
 //            		            Log.d("Socket", "time ticket interval =" + ticketInterval);
 //
-//            		            //????????1000ms????????1000ms???????????
-//            		            if (ticketInterval < Constant.MIN_COMMAND_REC_INTERVAL) {  //???????????????????1s????????buffer??ret???????command??????commandLenth
+//            		            //距离上次接收小于1000ms才组包，否则大于1000ms就算是接收完了或者丢弃
+//            		            if (ticketInterval < Constant.MIN_COMMAND_REC_INTERVAL) {  //小车端发了一半命令，但是没有发完，然后1s之内又发过来，在buffer中取ret大的数据追加到command中，最多追加commandLenth
 //            		                if (commandLength > 0) {
 //            		                    commandLength = appendBuffer(buffer, ret, command, commandLength);//
 //            		                } else {
-//            		                    Log.d("Socket", "not recognized command_1");       //?1s????????????
+//            		                    Log.d("Socket", "not recognized command_1");       //若1s之内没有下文了，则丢弃包
 //            		                }
 //            		            } else {
-//            		                if (buffer[0] == Constant.COMMAND_PERFIX ) {     		//?????
+//            		                if (buffer[0] == Constant.COMMAND_PERFIX ) {     		//新收到的包
 //            		                    for (i = 0; i < ret; i++) {
 //            		                        command[i] = buffer[i];
 //            		                    }
@@ -178,10 +179,10 @@ public class WiFiCarController{    //WiFiCar连接的封装类
 //            		                }
 //            		            }
 //
-//            		            lastTicket = newTicket;    //?????
+//            		            lastTicket = newTicket;    //更新时间戳
 //            		            printRecBuffer ("print command", command, commandLength);
 //
-//            		            if (commandLength >= Constant.COMMAND_LENGTH) {   //?????????????  ????????
+//            		            if (commandLength >= Constant.COMMAND_LENGTH) {   //判断是否已经接受完一条命令  实际上等于就够了
 //            		                Message msg = new Message();
 //            		                msg.what = Constant.MSG_ID_CON_READ;
 //            		                msg.obj = command;
@@ -196,6 +197,7 @@ public class WiFiCarController{    //WiFiCar连接的封装类
 //            		    msg.what = Constant.MSG_ID_ERR_RECEIVE;
 //            		    mHandler.sendMessage(msg);
 //            		}
+                    //删除注释测试结束
 
                 } else{
                     try {

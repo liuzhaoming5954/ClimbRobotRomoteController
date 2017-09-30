@@ -1,4 +1,4 @@
-#Wed Jul 26 16:33:36 EDT 2017
+#Tue Aug 15 16:18:15 EDT 2017
 base.0=C\:\\MyProgram\\Android\\android-camera-socket-stream-master\\WiFiCarClient-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c6194c7c6ec5ca3ef90f4251ce03db8c4afc6b3c
 renamed.1=classes.dex
 renamed.0=classes2.dex

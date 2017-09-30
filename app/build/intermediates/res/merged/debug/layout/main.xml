@@ -10,14 +10,34 @@
         android:layout_height="fill_parent" />
 
     <ImageButton
+        android:id="@+id/btnCamDown"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:background="#00000000"
+        android:src="@drawable/sym_backward"
+        android:layout_below="@+id/btnCamSwitch"
+        android:layout_alignLeft="@+id/btnCamSwitch" />
+
+    <ImageButton
+        android:id="@+id/btnCamLeft"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:background="#00000000"
+        android:src="@drawable/sym_left"
+        android:layout_below="@+id/btnCamUp"
+        android:layout_alignRight="@+id/btnServo"
+        android:layout_marginRight="11dp" />
+
+    <ImageButton
         android:id="@+id/btnLeft"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
         android:layout_gravity="left"
-        android:layout_marginBottom="43dp"
         android:background="#00000000"
-        android:src="@drawable/sym_left" />
+        android:src="@drawable/sym_left"
+        android:layout_below="@+id/btnForward"
+        android:layout_alignParentLeft="true" />
 
     <ImageButton
         android:id="@+id/btnBack"
@@ -39,6 +59,15 @@
         android:src="@drawable/sym_stop" />
 
     <ImageButton
+        android:id="@+id/btnCamSwitch"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:background="#00000000"
+        android:src="@drawable/sym_stop"
+        android:layout_below="@+id/btnCamUp"
+        android:layout_toLeftOf="@+id/gear2" />
+
+    <ImageButton
         android:id="@+id/btnRight"
         android:layout_width="60dp"
         android:layout_height="40dp"
@@ -46,6 +75,15 @@
         android:layout_toRightOf="@id/btnStop"
         android:background="#00000000"
         android:src="@drawable/sym_right" />
+
+    <ImageButton
+        android:id="@+id/btnCamRight"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:background="#00000000"
+        android:src="@drawable/sym_right"
+        android:layout_alignBottom="@+id/gear1"
+        android:layout_toRightOf="@+id/btnCamDown" />
 
     <ImageButton
         android:id="@+id/btnForward"
@@ -56,6 +94,15 @@
         android:layout_marginBottom="4dp"
         android:background="#00000000"
         android:src="@drawable/sym_forward" />
+
+    <ImageButton
+        android:id="@+id/btnCamUp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:background="#00000000"
+        android:src="@drawable/sym_forward"
+        android:layout_above="@+id/btnRight"
+        android:layout_toLeftOf="@+id/gear2" />
 
     <ImageButton
         android:id="@+id/ButtonCus1"
@@ -120,7 +167,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btnLen"
         android:layout_marginRight="6dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
 
     <com.fei435.SeekBar
         android:id="@+id/gear2"
@@ -130,7 +178,8 @@
         android:layout_below="@+id/btnLen"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:layout_toLeftOf="@id/gear1" />
+        android:layout_toLeftOf="@id/gear1"
+        android:visibility="invisible" />
 
     <ToggleButton
         android:id="@+id/gravityToggleButton"
@@ -163,7 +212,8 @@
         android:layout_alignLeft="@id/gravityToggleButton"
         android:layout_below="@id/ButtonCus1"
         android:layout_marginTop="15dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout3">
 
         <LinearLayout
             android:layout_width="wrap_content"
